@@ -16,9 +16,9 @@ public class Place extends UnicastRemoteObject implements PlaceInterface {
 
     /**
      * This constructor instantiates a Mobile.AgentLoader object that
-     * is used to define a new agent class coming from remotely.
+     * is used to define a new agent class coming remotely.
      */
-    public Place() throws RemoteException {
+    private Place() throws RemoteException {
         super();
         loader = new AgentLoader();
     }
@@ -62,11 +62,14 @@ public class Place extends UnicastRemoteObject implements PlaceInterface {
                     LocateRegistry.getRegistry(port);
             registry.list();
         } catch (RemoteException e) {
-            Registry registry =
-                    LocateRegistry.createRegistry(port);
             try {
+                Registry registry =
+                        LocateRegistry.createRegistry(port);
+
                 Place place = new Place();
-                registry.rebind("Place", place);// might need to be naming
+                registry.rebind("Place", place);                            // might need to be naming
+                System.out.println(registry.toString());
+
             } catch (Exception ef) {
                 ef.printStackTrace();
             }

@@ -1,11 +1,12 @@
 import java.io.*;
+import java.lang.reflect.Method;
 
 /**
  * Base class for user-define mobile agents. Inherit to gain access
  * to the agent's identifier, along with the next host's IP address
  * and port number. Additional information encapsulated includes
- * the next host, args passed to this agent anlong with its class
- * name and byte code. Actual agent withh run as an independent thread
+ * the next host, args passed to this agent along with its class
+ * name and byte code. Actual agent with run as an independent thread
  * that invokes a given function upon migrating to the next host.
  *
  * @author Christopher Ijams and Munehiro Fukuda.
@@ -83,10 +84,17 @@ public class Agent implements Serializable, Runnable {
     @Override
     public void run() {
         try {
-            this.getClass().getMethod("hop").invoke("hop");
+            String[] args = new String[3];
+            args[0] = "localhost";
+
+            Method method = this.getClass().getMethod(_function);
+            method.invoke(new MyAgent(args));
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public void hop() {
     }
 
     /**
@@ -97,11 +105,14 @@ public class Agent implements Serializable, Runnable {
      * @param function the name of a function to invoke upon a migration
      */
     public void hop(String hostname, String function) {
-        hop(hostname, function, null);
+        this._function = function;
+        this._hostname = hostname;
+        Thread t = new Thread(this);
+        t.start();
     }
 
     /**
-     * hop() transfers this agent to a given host, and invoeks a given
+     * hop() transfers this agent to a given host, and invokes a given
      * function of this agent as passing given arguments to it.
      *
      * @param hostname the IP name of the next host machine to migrate
@@ -110,7 +121,7 @@ public class Agent implements Serializable, Runnable {
      *                 migration.
      */
     public void hop(String hostname, String function, String[] args) {
-        // TODO Finish Impl.
+        System.out.println("HELLO");
     }
 
     /**
