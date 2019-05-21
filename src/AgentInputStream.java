@@ -5,6 +5,8 @@ import java.io.*;
  * deserialize it into an agent object. For this purpose,
  * ObjectInputStream.resolveClass() was overwritten to search AgentClassLoader
  * for a given agent.
+ *
+ * @author Christopher Ijams and Munehiro Fukuda.
  */
 public class AgentInputStream extends ObjectInputStream {
     private ClassLoader classloader;
