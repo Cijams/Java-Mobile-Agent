@@ -1,5 +1,6 @@
 import java.io.*;
 import java.lang.reflect.Method;
+import java.rmi.Naming;
 
 /**
  * Base class for user-define mobile agents. Inherit to gain access
@@ -13,7 +14,7 @@ import java.lang.reflect.Method;
  */
 public class Agent implements Serializable, Runnable {
     // the live data to carry with the agent upon a migration.
-    protected int agentId = -1;         // this agent's identifier.
+    protected int agentId = (int)(Math.random()*100);         // this agent's identifier.
     private String _hostname = null;    // the next host name to migrate.
     private String _function = null;    // the function to invoke upon a move.
     private int _port = 0;              // the next host's port to migrate.
@@ -105,6 +106,7 @@ public class Agent implements Serializable, Runnable {
      * @param function the name of a function to invoke upon a migration
      */
     public void hop(String hostname, String function) {
+        System.out.println("run() started from hop!\n");
         this._function = function;
         this._hostname = hostname;
         Thread t = new Thread(this);
@@ -121,7 +123,22 @@ public class Agent implements Serializable, Runnable {
      *                 migration.
      */
     public void hop(String hostname, String function, String[] args) {
-        System.out.println("HELLO");
+        System.out.println();
+        System.out.println("From second hop:");
+        System.out.println(hostname);
+        System.out.println(function);
+        System.out.println("localhost");
+
+        try {
+            PlaceInterface place = (PlaceInterface)
+                    Naming.lookup("rmi://" + "localhost" + ":" + 56777 + "/Place");
+            place.testMe();
+            System.out.println("passed");
+              //  place.transfer("test", null, null);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+      //  Thread.currentThread().stop();
     }
 
     /**

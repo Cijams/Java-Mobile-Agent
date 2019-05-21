@@ -31,21 +31,31 @@ public class Place extends UnicastRemoteObject implements PlaceInterface {
      */
     public static void main(String[] args) {
         String usage = "usage: java <port>";
-
-        if (args.length < 1) {
-            System.out.println(usage);
-            System.exit(-1);
-        }
-
-        if (Integer.parseInt(args[0]) < 5001 || Integer.parseInt(args[0]) > 65535) {
-            System.out.println(usage);
+        int port = 0;
+        try {
+            if (args.length == 1) {
+                port = Integer.parseInt(args[0]);
+                if (port < 5001 || port > 65535)
+                    throw new Exception();
+            } else {
+                throw new Exception();
+            }
+        } catch (Exception e) {
+            System.err.println(usage);
             System.exit(-1);
         }
 
         try {
-            int port = Integer.parseInt(args[0]);
-            System.out.println("Place Ready...");
             startRegistry(port);
+            System.out.println("Place ready.");
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.exit(-1);
+        }
+
+        try {
+            Place place = new Place();
+            Naming.rebind("rmi://localhost:" + port + "/Place", place);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -58,21 +68,11 @@ public class Place extends UnicastRemoteObject implements PlaceInterface {
      */
     private static void startRegistry(int port) throws RemoteException {
         try {
-            Registry registry =
-                    LocateRegistry.getRegistry(port);
+            Registry registry = LocateRegistry.getRegistry(port);
             registry.list();
-        } catch (RemoteException e) {
-            try {
-                Registry registry =
-                        LocateRegistry.createRegistry(port);
-
-                Place place = new Place();
-                registry.rebind("Place", place);                            // might need to be naming
-                System.out.println(registry.toString());
-
-            } catch (Exception ef) {
-                ef.printStackTrace();
-            }
+        } catch (RemoteException re) {
+            Registry registry = LocateRegistry.createRegistry(port);
+            registry.list();
         }
     }
 
@@ -113,5 +113,9 @@ public class Place extends UnicastRemoteObject implements PlaceInterface {
         thread.start();
 
         return true;
+    }
+
+    public void testMe() {
+        System.out.println("I, THE MIGHT TESTME HAVE BEEN CALLED, MORTALS");
     }
 }

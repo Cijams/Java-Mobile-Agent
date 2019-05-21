@@ -6,9 +6,18 @@ public class MyAgent extends Agent {
     }
 
     public void init() { // dispatched to a node specified with Mobile.Inject
-        System.out.println("agent( " + getId() + ") invoked init: ");
+        System.out.println("agent(" + getId() + ") invoked init: ");
         String[] args = new String[1];
+
+
+        for (int i = 0; i < args.length; i++)
+            System.out.println(args[i] + " args");
+        System.out.println(args.length);
+
         args[0] = "Hello!";
+
+
+
         hop(destination, "step", args);
     }
 
