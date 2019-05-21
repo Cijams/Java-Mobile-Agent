@@ -4,37 +4,21 @@ import java.io.*;
  * Base class for user-define mobile agents. Inherit to gain access
  * to the agent's identifier, along with the next host's IP address
  * and port number. Additional information encapsulated includes
- *  the next host, args passed to this agent anlong with its class
- *  name and byte code. Actual agent withh run as an independent thread
- *  that invokes a given function upon migrating to the next host.
+ * the next host, args passed to this agent anlong with its class
+ * name and byte code. Actual agent withh run as an independent thread
+ * that invokes a given function upon migrating to the next host.
  *
  * @authors Christopher Ijams and Munehiro Fukuda.
  */
 public class Agent implements Serializable, Runnable {
     // the live data to carry with the agent upon a migration.
-    protected int agentId        = -1;    // this agent's identifier.
-    private String _hostname     = null;  // the next host name to migrate.
-    private String _function     = null;  // the function to invoke upon a move.
-    private int _port            = 0;     // the next host's port to migrate.
-    private String[] _arguments  = null;  // arguments pass to _function.
-    private String _classname    = null;  // this agent's class name.
-    private byte[] _bytecode     = null;  // this agent's byte code.
-
-    /**
-     * setPort() sets a port that is used to contact a remote Mobile.Mobile.Place.
-     *
-     * @param port a port to be set.
-     * */
-    public void setPort(int port) {
-        this._port = port;
-    }
-
-    /**
-     * getId() returns this agent identifier: agentId.
-     */
-    public int getId() {
-        return agentId;
-    }
+    protected int agentId = -1;         // this agent's identifier.
+    private String _hostname = null;    // the next host name to migrate.
+    private String _function = null;    // the function to invoke upon a move.
+    private int _port = 0;              // the next host's port to migrate.
+    private String[] _arguments = null; // arguments pass to _function.
+    private String _classname = null;   // this agent's class name.
+    private byte[] _bytecode = null;    // this agent's byte code.
 
     /**
      * getByteCode() reads a byte code from the file whose name is given in
@@ -44,14 +28,9 @@ public class Agent implements Serializable, Runnable {
      * @return a byte code of a given class.
      */
     public static byte[] getByteCode(String classname) {
-        // create the file name.
         String filename = classname + ".class";
-
-        // allocate the buffer to read this agent's bytecode in.
-        File file = new File( filename );
-        byte[] bytecode = new byte[(int)file.length()];
-
-        // read this agent's bytecode from the file.
+        File file = new File(filename);
+        byte[] bytecode = new byte[(int) file.length()];
         try {
             BufferedInputStream bis =
                     new BufferedInputStream(new FileInputStream(filename));
@@ -62,6 +41,22 @@ public class Agent implements Serializable, Runnable {
             return null;
         }
         return bytecode;
+    }
+
+    /**
+     * setPort() sets a port that is used to contact a remote Mobile.Mobile.Place.
+     *
+     * @param port a port to be set.
+     */
+    public void setPort(int port) {
+        this._port = port;
+    }
+
+    /**
+     * getId() returns this agent identifier: agentId.
+     */
+    public int getId() {
+        return agentId;
     }
 
     /**
@@ -130,7 +125,7 @@ public class Agent implements Serializable, Runnable {
             os.writeObject(this);
             return out.toByteArray();
 
-        } catch ( IOException e ) {
+        } catch (IOException e) {
             e.printStackTrace();
             return null;
         }
