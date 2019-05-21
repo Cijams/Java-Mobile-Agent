@@ -8,7 +8,7 @@ import java.io.*;
  * name and byte code. Actual agent withh run as an independent thread
  * that invokes a given function upon migrating to the next host.
  *
- * @authors Christopher Ijams and Munehiro Fukuda.
+ * @author Christopher Ijams and Munehiro Fukuda.
  */
 public class Agent implements Serializable, Runnable {
     // the live data to carry with the agent upon a migration.
