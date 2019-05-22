@@ -106,9 +106,8 @@ public class Agent implements Serializable, Runnable {
      * @param function the name of a function to invoke upon a migration
      */
     public void hop(String hostname, String function) {
-        System.out.println("run() started from hop!\n");
-        this._function = function;
         this._hostname = hostname;
+        this._function = function;
         Thread t = new Thread(this);
         t.start();
     }
@@ -128,6 +127,13 @@ public class Agent implements Serializable, Runnable {
         System.out.println(hostname);
         System.out.println(function);
         System.out.println("localhost");
+
+
+        this._bytecode = this.getByteCode();
+        byte[] serialAgent = this.serialize();
+
+
+
 
         try {
             PlaceInterface place = (PlaceInterface)

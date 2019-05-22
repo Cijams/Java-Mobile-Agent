@@ -3,22 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="c0747549-a20f-4be7-9aaf-e16be1cfb887" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Mobile-Agent/AAcompileNrun.sh" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java-Mobile-Agent/AAcompileNrun.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Java-Mobile-Agent/Agent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java-Mobile-Agent/Agent.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Java-Mobile-Agent/Mobile.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java-Mobile-Agent/Mobile.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Java-Mobile-Agent/MyAgent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java-Mobile-Agent/MyAgent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Mobile-Agent/Place.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java-Mobile-Agent/Place.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Mobile-Agent/PlaceInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java-Mobile-Agent/PlaceInterface.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AAcompileNrun.sh" beforeDir="false" afterPath="$PROJECT_DIR$/src/AAcompileNrun.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Agent.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Agent.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Agent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Mobile.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mobile.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MyAgent.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyAgent.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MyAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyAgent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Place.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Place.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Place.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Place.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PlaceInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/PlaceInterface.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PlaceInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PlaceInterface.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,25 +29,16 @@
         <entry file="file://$PROJECT_DIR$/src/AAcompileNrun.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="108">
-              <caret line="4" column="40" lean-forward="true" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Inject.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-25">
-              <caret line="43" column="13" lean-forward="true" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Place.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="113" lean-forward="true" selection-start-line="113" selection-end-line="113" />
+            <state relative-caret-position="1271">
+              <caret line="97" column="22" selection-start-line="97" selection-start-column="22" selection-end-line="97" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3828#3829#0" expanded="true" />
@@ -65,11 +48,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Inject.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="856">
+              <caret line="61" column="9" lean-forward="true" selection-start-line="61" selection-start-column="9" selection-end-line="61" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Agent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-621">
-              <caret line="95" column="5" lean-forward="true" selection-start-line="95" selection-start-column="5" selection-end-line="95" selection-end-column="5" />
+            <state relative-caret-position="104">
+              <caret line="132" column="46" selection-start-line="132" selection-start-column="46" selection-end-line="132" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -80,7 +72,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AgentLoader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="403">
+            <state relative-caret-position="727">
               <caret line="28" selection-start-line="28" selection-end-line="28" />
             </state>
           </provider>
@@ -98,8 +90,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MyAgent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="243">
+              <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
               <folding>
                 <element signature="e#111#112#0" expanded="true" />
                 <element signature="e#192#193#0" expanded="true" />
@@ -144,17 +136,17 @@
         <option value="$PROJECT_DIR$/src/runPlace.sh" />
         <option value="$PROJECT_DIR$/src/compile.sh" />
         <option value="$PROJECT_DIR$/src/AAcompileNrun.sh" />
-        <option value="$PROJECT_DIR$/src/MyAgent.java" />
         <option value="$PROJECT_DIR$/src/Inject.java" />
-        <option value="$PROJECT_DIR$/src/Place.java" />
         <option value="$PROJECT_DIR$/src/PlaceInterface.java" />
+        <option value="$PROJECT_DIR$/src/Place.java" />
+        <option value="$PROJECT_DIR$/src/MyAgent.java" />
         <option value="$PROJECT_DIR$/src/Agent.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="51" />
-    <option name="y" value="103" />
+    <option name="x" value="-53" />
+    <option name="y" value="127" />
     <option name="width" value="2045" />
     <option name="height" value="1223" />
   </component>
@@ -342,7 +334,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="51" y="103" width="2045" height="1223" extended-state="0" />
+    <frame x="-53" y="127" width="2045" height="1223" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Image Layers" />
@@ -350,7 +342,7 @@
       <window_info id="UI Designer" />
       <window_info id="Capture Tool" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19162884" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3489662" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Analyze Dataflow to" weight="0.32996324" />
       <window_info anchor="bottom" id="Version Control" />
@@ -359,7 +351,7 @@
       <window_info anchor="bottom" id="Messages" weight="0.32996324" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3336397" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3841912" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3998162" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -434,20 +426,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AAcompileNrun.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="4" column="40" lean-forward="true" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Inject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-25">
-          <caret line="43" column="13" lean-forward="true" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/PlaceInterface.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
@@ -455,17 +433,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AgentLoader.java">
+    <entry file="file://$PROJECT_DIR$/src/AAcompileNrun.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        <state relative-caret-position="108">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Inject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="856">
+          <caret line="61" column="9" lean-forward="true" selection-start-line="61" selection-start-column="9" selection-end-line="61" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MyAgent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="243">
+          <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
           <folding>
             <element signature="e#111#112#0" expanded="true" />
             <element signature="e#192#193#0" expanded="true" />
@@ -475,24 +460,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Place.java">
+    <entry file="file://$PROJECT_DIR$/src/AgentLoader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="113" lean-forward="true" selection-start-line="113" selection-end-line="113" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3828#3829#0" expanded="true" />
-            <element signature="e#3871#3872#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="727">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Agent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-621">
-          <caret line="95" column="5" lean-forward="true" selection-start-line="95" selection-start-column="5" selection-end-line="95" selection-end-column="5" />
+        <state relative-caret-position="104">
+          <caret line="132" column="46" selection-start-line="132" selection-start-column="46" selection-end-line="132" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Place.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1271">
+          <caret line="97" column="22" selection-start-line="97" selection-start-column="22" selection-end-line="97" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3828#3829#0" expanded="true" />
+            <element signature="e#3871#3872#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -100,8 +100,13 @@ public class Place extends UnicastRemoteObject implements PlaceInterface {
      */
     public boolean transfer(String classname, byte[] bytecode, byte[] entity)
             throws RemoteException {
+
+
+
+
         Agent myAgent = null; // MyAgent agent
-        loader.loadClass(classname, bytecode);
+        System.out.println(loader.loadClass(classname, bytecode));
+
         try {
             myAgent = deserialize(bytecode);
         } catch (Exception e) {
