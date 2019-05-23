@@ -14,9 +14,9 @@ import java.rmi.Naming;
  */
 public class Agent implements Serializable, Runnable {
     // the live data to carry with the agent upon a migration.
-    protected int agentId = (int)(Math.random()*100);         // this agent's identifier.
+    protected int agentId = -1;         // this agent's identifier.
     private String _hostname = null;    // the next host name to migrate.
-    private String _function = null;    // the function to invoke upon a move.
+    public String _function = null;    // the function to invoke upon a move.
     private int _port = 0;              // the next host's port to migrate.
     private String[] _arguments = null; // arguments pass to _function.
     private String _classname = null;   // this agent's class name.
@@ -54,11 +54,19 @@ public class Agent implements Serializable, Runnable {
         this._port = port;
     }
 
+    public void set_function(String func) {
+        this._function = func;
+    }
+
     /**
      * getId() returns this agent identifier: agentId.
      */
     public int getId() {
         return agentId;
+    }
+
+    public void setID(int id) {
+        this.agentId = id;
     }
 
     /**
@@ -85,19 +93,16 @@ public class Agent implements Serializable, Runnable {
     @Override
     public void run() {
         try {
-            String[] args = new String[3];
-            args[0] = "localhost";
-
-            Method method = this.getClass().getMethod(_function);
-            method.invoke(new MyAgent(args));
+            Method method = this.getClass().getMethod(this._function);
+            method.invoke(this);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     public void hop() {
+        System.out.println("Hop() ran");
     }
-
     /**
      * hop() transfers this agent to a given host and invokes a given
      * function of this agent.
@@ -108,8 +113,15 @@ public class Agent implements Serializable, Runnable {
     public void hop(String hostname, String function) {
         this._hostname = hostname;
         this._function = function;
-        Thread t = new Thread(this);
-        t.start();
+        this._bytecode = this.getByteCode();
+        byte[] entity = this.serialize();
+        try {
+            PlaceInterface place = (PlaceInterface)
+                    Naming.lookup("rmi://" + this._hostname + ":" + 56777 + "/Place");
+            place.transfer(_classname, _bytecode, entity);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -122,29 +134,17 @@ public class Agent implements Serializable, Runnable {
      *                 migration.
      */
     public void hop(String hostname, String function, String[] args) {
-        System.out.println();
-        System.out.println("From second hop:");
-        System.out.println(hostname);
-        System.out.println(function);
-        System.out.println("localhost");
-
-
+        this._hostname = hostname;
+        this._function = function;
         this._bytecode = this.getByteCode();
-        byte[] serialAgent = this.serialize();
-
-
-
-
+        byte[] entity = this.serialize();
         try {
             PlaceInterface place = (PlaceInterface)
-                    Naming.lookup("rmi://" + "localhost" + ":" + 56777 + "/Place");
-            place.testMe();
-            System.out.println("passed");
-              //  place.transfer("test", null, null);
+                    Naming.lookup("rmi://" + this._hostname + ":" + args[0] + "/Place");
+            place.transfer(_classname, _bytecode, entity);
         } catch (Exception e) {
             e.printStackTrace();
         }
-      //  Thread.currentThread().stop();
     }
 
     /**

@@ -1,4 +1,5 @@
 import java.io.*;
+import java.lang.reflect.Constructor;
 import java.rmi.*;
 import java.rmi.server.*;
 import java.rmi.registry.*;
@@ -47,7 +48,7 @@ public class Place extends UnicastRemoteObject implements PlaceInterface {
 
         try {
             startRegistry(port);
-            System.out.println("Place ready.");
+            System.out.println("Place ready...\n");
         } catch (Exception e) {
             e.printStackTrace();
             System.exit(-1);
@@ -100,27 +101,27 @@ public class Place extends UnicastRemoteObject implements PlaceInterface {
      */
     public boolean transfer(String classname, byte[] bytecode, byte[] entity)
             throws RemoteException {
+        Class MyAgent = loader.loadClass(classname, bytecode);
+        String[] args = new String[5];
+        args[0] = "hi";
 
+        Agent agent;
+        MyAgent myAgent;
 
-
-
-        Agent myAgent = null; // MyAgent agent
-        System.out.println(loader.loadClass(classname, bytecode));
+        AgentLoader loader = new AgentLoader();
+        Class agentClass = loader.loadClass(classname, bytecode);
 
         try {
-            myAgent = deserialize(bytecode);
+            agent = deserialize(entity);
+            myAgent = (MyAgent) agent;
+            agent.setID(55);
         } catch (Exception e) {
             e.printStackTrace();
             return false;
         }
-        //  myAgent.setId(5); // do some math
         Thread thread = new Thread(myAgent);
         thread.start();
 
         return true;
-    }
-
-    public void testMe() {
-        System.out.println("I, THE MIGHT TESTME HAVE BEEN CALLED, MORTALS");
     }
 }

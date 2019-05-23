@@ -17,6 +17,4 @@ public interface PlaceInterface extends Remote {
      */
     boolean transfer(String classname, byte[] bytecode,
                      byte[] entity) throws RemoteException;
-
-    void testMe() throws RemoteException;
 }
