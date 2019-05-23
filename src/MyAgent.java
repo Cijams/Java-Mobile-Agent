@@ -18,22 +18,29 @@ public class MyAgent extends Agent {
 
     public void init() {
         System.out.println("agent(" + getId() + ") invoked init: ");
-        hop();
-        String[] args = new String[5];
-        args[0] = 56777+"";
+        System.out.println("hop count = " + hopCount);
+        System.out.println("next destination = " + destination[hopCount]);
+        hopCount++;
+
+        String[] args = new String[1];
+        args[0] = 56778+"";
         hop(destination[1], "step", args);
     }
 
-    public void step() { // dispatched to a user-specified node
-        System.out.println("agent( " + getId() + ") invoked step: ");
-        String[] args = new String[5];
-        args[0] = 56778+"";
-        System.out.println(++hopCount);
-        hop(destination[2], "end", args);
+    public void step() {
+        System.out.println("agent(" + getId() + ") invoked step: ");
+        System.out.println("hop count = " + hopCount);
+        System.out.println("next destination = " + destination[hopCount]);
+        hopCount++;
+
+        String[] args = new String[1];
+        args[0] = 56779+"";
+        hop(destination[2], "jump", args);
     }
 
-    public void end() {
-        System.out.println(++hopCount);
-        System.out.println("I ended");
+    public void jump() {
+        System.out.println("agent(" + getId() + ") invoked jump: ");
+        System.out.println("hop count = " + hopCount);
+        hopCount++;
     }
 }

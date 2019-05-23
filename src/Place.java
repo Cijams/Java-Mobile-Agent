@@ -1,5 +1,4 @@
 import java.io.*;
-import java.lang.reflect.Constructor;
 import java.rmi.*;
 import java.rmi.server.*;
 import java.rmi.registry.*;
@@ -102,6 +101,7 @@ public class Place extends UnicastRemoteObject implements PlaceInterface {
     public boolean transfer(String classname, byte[] bytecode, byte[] entity)
             throws RemoteException {
         Class MyAgent = loader.loadClass(classname, bytecode);
+
         String[] args = new String[5];
         args[0] = "hi";
 
@@ -114,7 +114,7 @@ public class Place extends UnicastRemoteObject implements PlaceInterface {
         try {
             agent = deserialize(entity);
             myAgent = (MyAgent) agent;
-            agent.setID(55);
+            agent.setID(MyAgent.hashCode()%809);
         } catch (Exception e) {
             e.printStackTrace();
             return false;
